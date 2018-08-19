@@ -180,7 +180,7 @@ Function Download-Wmf5Server2008($architecture) {
         # $zip_src = $shell.NameSpace($zip_file)
         # $zip_dest = $shell.NameSpace($tmp_dir)
         # $zip_dest.CopyHere($zip_src.Items(), 1044)
-        $7zip_url = "https://github.com/develar/7zip-bin/raw/master/win/ia32/7za.exe"
+        $7zip_url = "https://media.githubusercontent.com/media/develar/7zip-bin/master/win/ia32/7za.exe"
         $7zip_file = "$tmp_dir\7za.exe"
         Download-File -url $7zip_url -path $7zip_file
         Start-Process -FilePath "$tmp_dir\7za.exe" -ArgumentList "e -o$tmp_dir -y $zip_file"
