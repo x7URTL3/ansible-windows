@@ -250,7 +250,7 @@ switch ($version) {
             throw $error_msg
         }
         # check if WMF 3 is installed, need to be uninstalled before 5.1
-        if ($os_version.Minor -lt 2) {
+        if ($os_version.Major -ne 10 -and $os_version.Minor -lt 2) {
             $wmf3_installed = Get-Hotfix -Id "KB2506143" -ErrorAction SilentlyContinue
             if ($wmf3_installed) {
                 $actions += "remove-3.0"
