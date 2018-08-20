@@ -210,7 +210,7 @@ if ($PSVersionTable -eq $null) {
         Write-Log -message $error_msg -level "ERROR"
         throw $error_msg
     }
-    Reboot-AndResume
+    #Reboot-AndResume
 }
 
 # exit if the target version is the same as the actual version
@@ -369,7 +369,7 @@ foreach ($action in $actions) {
         throw $log_msg
     }
     if ($exit_code -eq 3010) {
-        Reboot-AndResume
+        #Reboot-AndResume
         break
     }
 }
