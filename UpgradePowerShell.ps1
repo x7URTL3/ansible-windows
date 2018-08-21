@@ -183,7 +183,7 @@ Function Download-Wmf5Server2008($architecture) {
         $7zip_url = "https://media.githubusercontent.com/media/develar/7zip-bin/master/win/ia32/7za.exe"
         $7zip_file = "$tmp_dir\7za.exe"
         Download-File -url $7zip_url -path $7zip_file
-        Start-Process -FilePath "$tmp_dir\7za.exe" -ArgumentList "e -o$tmp_dir -y $zip_file"
+        Start-Process -FilePath "$tmp_dir\7za.exe" -ArgumentList "e -o$tmp_dir -y $zip_file" -Wait
     } else {
         [System.IO.Compression.ZipFile]::ExtractToDirectory($zip_file, $tmp_dir)
     }
